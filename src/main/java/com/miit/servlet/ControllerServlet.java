@@ -13,9 +13,9 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-@WebServlet("/books/*")
+@WebServlet(value = "/books/*", loadOnStartup = 1)
 public class ControllerServlet extends HttpServlet {
-//        private ArrayList<Book> bookList = new ArrayList<>();
+    //        private ArrayList<Book> bookList = new ArrayList<>();
     private final BookDAO bookDAO;
 
     public ControllerServlet() {

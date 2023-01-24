@@ -7,6 +7,6 @@
 
     <!--default file when app loads-->
     <welcome-file-list>
-        <welcome-file>BookForm.jsp</welcome-file>
+        <welcome-file>MainApp.jsp</welcome-file>
     </welcome-file-list>
 </web-app>
