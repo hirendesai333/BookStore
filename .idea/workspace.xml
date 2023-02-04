@@ -9,11 +9,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d15280f4-d2e7-4f93-89f4-0f62b1bd1efc" name="Changes" comment="Added Realtime JDBC connection">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/MainApp.jsp" afterDir="false" />
+    <list default="true" id="d15280f4-d2e7-4f93-89f4-0f62b1bd1efc" name="Changes" comment="Added realtime routing with no conflict">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/miit/servlet/LoginServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/miit/servlet/LogoutServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/Header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/miit/dao/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/miit/dao/BookDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/miit/servlet/ControllerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/miit/servlet/ControllerServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/BookForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/BookForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/BookList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/BookList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/MainApp.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MainApp.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,16 +34,19 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Jspx File" />
         <option value="CSS File" />
         <option value="Class" />
+        <option value="HTML File" />
         <option value="Jsp File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -45,6 +59,11 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="workOffline" value="true" />
+      </MavenGeneralSettings>
+    </option>
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="workspaceImportEnabled" value="true" />
@@ -68,7 +87,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/hirendesai/Desktop/IdeaProjects/JSP/BookStore&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/hirendesai/Desktop/IdeaProjects/Servlet/BookStore&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -78,8 +97,13 @@
     &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
   }
 }</component>
   <component name="Push.Settings">
@@ -89,7 +113,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/view" />
       <recent name="$PROJECT_DIR$/src/main/webapp" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.miit.servlet" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -108,7 +136,7 @@
       <predefined_log_file id="Tomcat Catalina Log" />
       <predefined_log_file id="Tomcat Manager Log" />
       <predefined_log_file id="Tomcat Host Manager Log" />
-      <option name="contextPath" value="/BookStore" />
+      <option name="contextPath" value="" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
       <option name="tomcatInfo">
         <TomcatInfo>
@@ -153,7 +181,19 @@
       <workItem from="1674245733056" duration="221000" />
       <workItem from="1674246007833" duration="20876000" />
       <workItem from="1674358052560" duration="14000" />
-      <workItem from="1674498675983" duration="4928000" />
+      <workItem from="1674498675983" duration="5693000" />
+      <workItem from="1674583165373" duration="706000" />
+      <workItem from="1674584108780" duration="96000" />
+      <workItem from="1674748451840" duration="41000" />
+      <workItem from="1674841483668" duration="759000" />
+      <workItem from="1674852165744" duration="1199000" />
+      <workItem from="1675366234626" duration="77000" />
+      <workItem from="1675436542776" duration="115000" />
+      <workItem from="1675436670619" duration="94000" />
+      <workItem from="1675468437764" duration="4396000" />
+      <workItem from="1675519943149" duration="6216000" />
+      <workItem from="1675531828754" duration="3118000" />
+      <workItem from="1675535081108" duration="6098000" />
     </task>
     <task id="LOCAL-00001" summary="Added Realtime JDBC connection">
       <created>1674328735061</created>
@@ -162,15 +202,34 @@
       <option name="project" value="LOCAL" />
       <updated>1674328735061</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added realtime routing with no conflict">
+      <created>1674518869133</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1674518869133</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Added Realtime JDBC connection" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Realtime JDBC connection" />
+    <MESSAGE value="Added realtime routing with no conflict" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added realtime routing with no conflict" />
   </component>
 </project>

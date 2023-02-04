@@ -7,9 +7,6 @@ import java.util.ArrayList;
 
 public class BookDAO {
 
-    private String jdbcURL = "jdbc:mysql://localhost:3306/book";
-    private String jdbcUsername = "root";
-    private String jdbcPassword = "Tudsj_9921";
     private Connection jdbcConnection;
 
     public ArrayList<Book> listAllBooks() throws SQLException {
@@ -49,9 +46,12 @@ public class BookDAO {
         try {
             if (jdbcConnection == null || jdbcConnection.isClosed()) {
                 Class.forName("com.mysql.cj.jdbc.Driver");
+                String jdbcURL = "jdbc:mysql://localhost:3306/book";
+                String jdbcUsername = "root";
+                String jdbcPassword = "Tudsj_9921";
                 jdbcConnection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
 
-                System.out.printf("MySQL Connection Established");
+//                System.out.printf("MySQL Connection Established");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -63,7 +63,7 @@ public class BookDAO {
             if (jdbcConnection != null && !jdbcConnection.isClosed()) {
                 jdbcConnection.close();
 
-                System.out.printf("MySQL Connection Closed");
+//                System.out.printf("MySQL Connection Closed");
             }
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();

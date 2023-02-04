@@ -15,24 +15,18 @@ import java.util.ArrayList;
 
 @WebServlet(value = "/books/*", loadOnStartup = 1)
 public class ControllerServlet extends HttpServlet {
-    //        private ArrayList<Book> bookList = new ArrayList<>();
     private final BookDAO bookDAO;
 
     public ControllerServlet() {
         super();
-
         bookDAO = new BookDAO();
-
-        /*bookList.add(new Book("Lord of the rings", "J. R. R. Tolkien", 5.5F));
-        bookList.add(new Book("Harry Potter", "George R.R. Martin", 8.99F));
-        bookList.add(new Book("The best of me", "Nicholas Sparks", 7.99F));*/
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        /*request.setAttribute("book_list", bookList);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/BookList.jsp");
-        dispatcher.forward(request, response);*/
+        response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+        response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+        response.setDateHeader("Expires", 0); // Proxies.
 
         String action = request.getPathInfo();
         if (action.equals("/new")) {
@@ -47,15 +41,14 @@ public class ControllerServlet extends HttpServlet {
     }
 
     private void addBook(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/BookForm.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/view/BookForm.jsp");
         dispatcher.forward(request, response);
     }
 
     private void listBooks(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
-//        request.setAttribute("book_list", bookList);
         ArrayList<Book> bookList = bookDAO.listAllBooks();
         request.setAttribute("book_list", bookList);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/BookList.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/view/BookList.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -77,7 +70,6 @@ public class ControllerServlet extends HttpServlet {
         String price = request.getParameter("bookPrice");
 
         Book book = new Book(title, author, Float.parseFloat(price));
-//        bookList.add(book);
         bookDAO.insertBook(book);
         response.sendRedirect("list");
     }
